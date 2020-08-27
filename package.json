@@ -8,19 +8,17 @@
   "license": "MIT",
   "description": "Use Terser to minify JavaScript in production Snowpack apps",
   "keywords": [
-    "snowpack plugin terser"
+    "snowpack plugin terser",
+    "snowpack plugin",
+    "terser"
   ],
   "main": "dist/main/index.js",
-  "module": "dist/module/index.js",
-  "unpkg": "dist/umd/snowpack-plugin-terser.js",
   "source": "src/index.ts",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "browser": "./dist/module/index.js",
       "import": "./dist/esm/index.mjs",
       "require": "./dist/main/index.js",
-      "umd": "./dist/umd/snowpack-plugin-terser.js",
       "source": "./src/index.ts",
       "types": "./types/index.d.ts",
       "default": "./dist/main/index.js"
@@ -124,8 +122,15 @@
     "lundle": "latest",
     "prettier": "latest",
     "standard-version": "latest",
+    "terser": "^5.2.1",
     "typescript": "latest"
   },
-  "dependencies": {},
-  "peerDependencies": {}
+  "dependencies": {
+    "@rollup/pluginutils": "^4.0.0",
+    "@types/glob": "^7.1.3",
+    "glob": "^7.1.6"
+  },
+  "peerDependencies": {
+    "terser": ">=5.2.0"
+  }
 }
